@@ -156,7 +156,7 @@
               <a class="nav-link" href="{{route('user')}}">
                 <span class="activebg">
                 <i class="mdi mdi-account-outline menu-icon"></i>
-                <span class="menu-title">Users</span>
+                <span class="menu-title">Supervisor</span>
                 </span>
               </a>
           </li>
@@ -279,7 +279,7 @@
               <a class="nav-link" href="{{route('users')}}">
                 <span class="activebg">
                 <i class="mdi mdi-account"></i>
-                <span class="menu-title">User</span>
+                <span class="menu-title">Supervisor</span>
                 </span>
               </a>
           </li>  
