@@ -1,0 +1,177 @@
+body.ar{
+  direction: rtl;
+}
+body.ar .sidebar.sidebar-offcanvas .nav {
+    padding-right: 0;
+}
+body.ar .sidebar .nav:not(.sub-menu)>.nav-item>.nav-link {
+   text-align: right;
+}
+body.ar .sidebar .nav .nav-item .nav-link i.menu-icon {
+    margin-right: 0rem;
+    margin-left: 0.25rem;
+
+}
+body.ar .company-common-header_view {
+        text-align: right;
+        float: right;
+}
+body.ar .input-group-prepend {
+    margin-right: -1px;
+}
+
+body.ar .login-forgot-commontext  .text-left {
+    text-align: right !important;
+}
+
+body.ar .login-forgot-commontext .border-right-0 {
+    border-right: 1px solid #a3a4a5!important;
+    border-left: 0px solid #a3a4a5!important;
+}
+body.ar .login-forgot-commontext .border-left-0 {
+    border-left: 1px solid #a3a4a5 !important;
+}
+body.ar .login-forgot-commontext .form-check .form-check-label input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 0;
+    margin-top: 0;
+    z-index: 1;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+body.ar .select-lang-flagimag span {
+    float: right;
+    display: flex;
+    line-height: 50px;
+}
+body.ar .login-forgot-commontext  .form-check .form-check-label {
+    min-height: 18px;
+    display: block;
+    margin-right: 1.75rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+body.ar .login-forgot-commontext .form-check .form-check-label input[type="checkbox"]+.input-helper:before, body.ar .login-forgot-commontext .form-check .form-check-label input[type="checkbox"]+.input-helper:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+body.ar .custom-search-view-place select {
+    border: 1px solid #eee;
+    margin-left: 15px;
+    margin-right: 0px;
+}
+body.ar .company-list-cust-box {
+    margin-left: 10px;
+    margin-right: 0px;
+    float: unset;
+    float: right;
+}
+body.ar .mr-3, body.ar .template-demo>.btn-toolbar, body.ar .mx-3 {
+    margin-left: 1rem !important;
+    margin-right: 0rem !important;
+}
+body.ar .grid-margin.stretch-card .card-body .card-title{
+  text-align: right;
+}
+body.ar .grid-margin.stretch-card .card-body .text-muted{
+  text-align: right;
+}
+body.ar .navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .navbar-dropdown {
+    left: 0;
+    right: auto;
+}
+body.ar .navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown i {
+    margin-left: .5rem;
+    margin-right: 0rem;
+}
+body.ar .common-view-header-view-search {
+    text-align: left;
+}
+body.ar .float-right {
+    float: left !important;
+}
+body.ar .grid-views-sections .card-inverse-info .card-body .card-text{
+      text-align: right;
+}
+body.ar .ml-1, body.ar .mx-1 {
+      margin-left: 0.25rem !important;
+      margin-right: 0.25rem !important;
+}
+body.ar .company-list-cust-back {
+    float: left;
+    transform: rotate(180deg);
+}
+body.ar .content-wrapper .form-group.row .col-form-label{
+   text-align: right;
+}
+body.ar .logo-create-text{
+  float: right;
+}
+body.ar .tox .tox-editor-container {
+    direction: rtl;
+}
+body.ar .terms-condition-text-left{
+  text-align: right;
+}
+body.ar .table-responsive td, body.ar .table-responsive th {
+    padding: 6px;
+    border: 1px solid #fff;
+    text-align: right;
+}
+body.ar .form-horizontal .form-group label{
+  text-align: right;
+  display: block;
+}
+body.ar .grid-views-sections .card-body.text-center.company-listing-gridview .card-text{
+   direction: initial;
+}
+body.ar .common-logo-logo-create .pl-0{
+  padding-right: 0 !important;
+}
+body.ar .common-logo-logo-create .pr-0{
+  padding-left: 0 !important;
+}
+body.ar .card .card-body .transaction-common-header_view{
+  text-align: right;
+}
+body.ar .page-item .page-link .la.la-angle-right{
+  transform: rotate(180deg);
+}
+body.ar .page-item .page-link .la.la-angle-left{
+  transform: rotate(180deg);
+}
+body.ar .notification-compnay-subscription-a {
+  text-align: left;
+}
+body.ar .page-item:last-child .page-link, body.ar .jsgrid .jsgrid-pager .jsgrid-pager-nav-button:last-child .page-link, body.ar .jsgrid .jsgrid-pager .jsgrid-pager-page:last-child .page-link, body.ar .page-item:last-child .jsgrid .jsgrid-pager .jsgrid-pager-nav-button a, body.ar .jsgrid .jsgrid-pager .jsgrid-pager-nav-button .page-item:last-child a, body.ar .jsgrid .jsgrid-pager .jsgrid-pager-nav-button:last-child a, body.ar .page-item:last-child .jsgrid .jsgrid-pager .jsgrid-pager-page a, .jsgrid .jsgrid-pager .jsgrid-pager-page .page-item:last-child a, .jsgrid .jsgrid-pager .jsgrid-pager-page:last-child a {
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+  border-top-right-radius: 0rem;
+  border-bottom-right-radius: 0rem;
+}
+body.ar .page-item:first-child .page-link{
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    border-top-left-radius: 0rem;
+    border-bottom-left-radius: 0rem;
+}
+body.ar .user-mdiaccount-profilet .cust-card-title{
+   text-align: right;
+   display: block;
+}
+body.ar .nav-item.nav-profile.dropdown.mr-0.mr-sm-2{
+   margin-left: 0.5rem !important;
+   margin-right: 0!important;
+}
+@media (min-width: 992px) {
+body.ar .navbar .navbar-menu-wrapper .navbar-nav.navbar-nav-right {
+    margin-right: auto;
+    margin-left: 0;
+}
+
+}

@@ -1,0 +1,36 @@
+@component('mail::message')
+    @isset($mdata->top_panel)
+        @component('mail::panel')
+        {!!$mdata->top_panel!!}
+        @endcomponent
+    @endisset
+    @isset($mdata->message)
+        {!!$mdata->message!!}
+    @endisset
+    @isset($mdata->middle_panel)
+        @component('mail::panel')
+        {!!$mdata->middle_panel!!}
+        @endcomponent
+    @endisset
+    @isset($mdata->table)
+        @component('mail::table')
+        {!!$mdata->table!!}
+        @endcomponent
+    @endisset
+    @isset($mdata->bottom_panel)
+        @component('mail::panel')
+        {!!$mdata->bottom_panel!!}
+        @endcomponent
+    @endisset
+    @isset($mdata->bottom_message)
+        {!!$mdata->bottom_message!!}
+    @endisset
+    @isset($mdata->btn_url)
+        @component('mail::button', ['url' => $mdata->btn_url, 'color' => $mdata->btn_color])
+        {{$mdata->btn_txt}}
+        @endcomponent
+    @endisset
+    @isset($mdata->sub)
+        {!!$mdata->sub!!}
+    @endisset
+@endcomponent

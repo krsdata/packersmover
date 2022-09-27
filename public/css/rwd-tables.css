@@ -1,0 +1,79 @@
+  /* 
+Generic Styling, for Desktops/Laptops 
+*/
+table { 
+  width: 100%; 
+  border-collapse: collapse; 
+}
+/* Zebra striping */
+tr:nth-of-type(odd) { 
+  background: #eee; 
+}
+th { 
+  background: #333; 
+  color: white; 
+  font-weight: bold; 
+}
+td, th { 
+  padding: 6px; 
+  border: 1px solid #fff; 
+  text-align: left; 
+}
+
+/* Hide new mobile heading on desktop */
+td span.rwd-tables.thead { 
+	display: none;
+}
+@media only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+	/* Force table to not be like tables anymore */
+	table.rwd-tables, .rwd-tables thead, .rwd-tables tbody, .rwd-tables th, .rwd-tables tbody,
+	.rwd-tables td, .rwd-tables tr { 
+		display: block; 
+	}
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+	.rwd-tables thead, .rwd-tables th { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+
+	.rwd-tables tfoot {
+		display: block;
+		text-align: right;
+	}
+
+	.rwd-tables tfoot td {
+		display: inline-block;
+	}
+	
+	td span.rwd-tables, td span.rwd-tables.thead {
+		width: 50%;
+		display: inline-block;
+	}
+	td span.rwd-tables.tbody{
+		text-align: right;
+	}
+
+	/* 
+	Generic Styling, for Mobiles
+	*/
+
+	.rwd-tables tfoot tr:nth-of-type(odd), .rwd-tables tfoot td { 
+	  background: #333; 
+	  color: white; 
+	  font-weight: bold; 
+	  border-bottom: none;
+	}
+	
+	.rwd-tables tr { border: 1px solid #ccc; }
+	
+	.rwd-tables td { 
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+	}
+
+}

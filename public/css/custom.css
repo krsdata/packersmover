@@ -1,0 +1,169 @@
+@font-face {
+    font-family: 'Regular';
+    src: url('../fonts/FontsFree-Net-SFProText-Regular.eot');
+    src: local('☺'), url('../fonts/FontsFree-Net-SFProText-Regular.woff') format('woff'), url('../fonts/FontsFree-Net-SFProText-Regular.ttf') format('truetype'), url('../fonts/FontsFree-Net-SFProText-Regular.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+label.error,label.server-error{
+    color: rgb(215,0,0);
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+.reportmodel .table-bordered th, .reportmodel .table-bordered td {padding: 2px 15px;font-size: 12px}
+.reportmodel .modal-body,.reportmodel .card-body{padding: 15px!important;}
+.reportmodel .card{padding: 0px!important;}
+.reportmodel .card-body .container-fluid{padding: 0px!important;}
+.active .activebg{
+    color: #ffffff;
+}
+.active .activebg i{color: #464646!important;}
+.activebg:hover,.activebg:hover i{
+    color: #fff;
+}
+.activebg{
+    display: block;
+    width: 100%;
+    border-radius: 5px;
+    padding: 5px 15px 5px 15px;
+    max-width: 200px;
+    margin: 0 auto;
+    color: #fff;
+}
+.activebg i  {
+    color: #8e94ac;
+}
+.table-responsive .table thead th{
+    padding: .875rem 0.9375rem;
+}
+.cust-box-icon{
+    background: #41B5EF;
+    padding: 5px 7px;
+    border-radius: 3px;
+    color: #ffffff;
+    vertical-align: middle;
+    font-size: 1.2rem;
+}
+.order-list-text-aliggn-r{
+    text-align: right;
+}
+.order-list-text-aliggn-r button{
+     font-size: 16px!important;
+    font-weight: 500;
+    padding: 8px 8px!important;
+}
+.cust-card-title {
+    color: #464646;
+    margin-bottom: 0.625rem;
+    text-transform: capitalize;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+.btn.proceed-toorder{
+    font-size: 0.975rem;
+    padding: 0.9rem 1.5rem!important;
+}
+.custom-search-view-place{
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    height: 40px;
+}
+.custom-search-view-place1{
+    max-width: 400px;
+    float: right;
+}
+#invoice-POS .table-responsive .table .bg-dark{
+  background-color: #9698a4 !important;
+}
+.custom-search-view-place a,.custom-search-view-place button{
+    padding: 11px 15px;
+}
+.btn.badge-primary.btn-xs .mdi.mdi-plus-circle{
+      font-size: 1.2rem;
+}
+.table-responsive .sid-name-text-st-sm{
+    font-size: 0.975rem;
+    padding: 0.5rem 0.81rem;
+}
+ .select2-container--default .select2-selection--multiple .select2-selection__rendered{
+  padding: 2px 5px!important;
+}
+/*#table_filter_view .btn.badge-primary.btn-xs .mdi-lead-pencil{
+  font-size: 0.9rem;
+}*/
+.table-striped th{color : #464646 }
+@media print {
+    @page { margin: 0; }
+    body { margin: 1.6cm; }
+}
+.cust-card-dash{position: relative;}
+.cust-icon-rounded-xs{position: absolute;top: -22px;left: -29px;display: none;}
+.cust-card-dash p{font-size: 0.9rem;}
+.cust-card-dash h3{font-size: 1.3rem;}
+.custom-search-view-place select{ border: 1px solid #eee; margin-right: 15px;}
+.custom-search-view-place input{ border: 1px solid #eee;}
+.border-radius-10{border-radius: 10px;}
+.border-radius-05{border-radius: 5px;min-width: 130px;}
+.cust-delete-btn{ position: absolute;top: 27px; right: 27px;}
+.dashboard-div .stretch-card{padding-right: 5px; padding-left: 5px; margin-bottom: 10px;}
+.dashboard-div .col-md-4.grid-margin.stretch-card .card.border-0.border-radius-10 .card-body{ padding : 10px;}
+
+/*admin user css*/
+.cust-card-title.addleft-btn-addd-pop{
+    font-size: 38px;
+    padding: 0px;
+    position: relative;
+    bottom: 3px;
+}
+.cust-card-title.addleft-btn-addd-pop .cust-box-icon{
+      font-size: 30px;
+}
+.tanklist-select-views select.form-control:not([size]):not([multiple]){
+        height: calc(2.3rem + 2px);
+}
+.tanklist-select-views_search .btn.common_search_filter{
+      padding: 0.2rem 1.0rem;
+}
+.filled_capacity.filled-cap_pro-24{
+  padding-top: 15px;
+}
+.filled-cap_pro-24{
+    color: #464646;
+}
+.co-filled-cap_pro-24{
+    position: relative;
+}
+.product-gridview.co-filled-cap_pro-24:hover .product-buttonsview{
+       position: relative;
+       bottom: 24px;
+}
+#table_filter_view .product-buttonsview a:hover{
+    text-decoration: none;
+}
+.table-responsive tbody tr td.server-error{
+    text-align: center;
+}
+.filled-cap_pro-24 .vp-email-address-st{
+    width: 90%;
+    display: inline-block;
+    margin: 0px auto;
+    text-align: left;
+    color: #464646;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.filled-cap_pro-24 span.pro-24{
+    display: inline-block;
+    float: right;
+    font-size: 14px;
+    font-weight: 600;
+}
+.add-select-muletile12 .select2-container--default .select2-selection--multiple .select2-selection__rendered {
+    padding: 7px 15px!important;
+}
