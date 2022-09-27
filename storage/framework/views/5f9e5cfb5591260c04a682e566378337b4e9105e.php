@@ -8,11 +8,11 @@
                   <div class="col-sm-6">
                       <h4 class="cust-card-title">
                         <i class="mdi  mdi-account cust-box-icon"></i>
-                        User list
+                        Supervisor  list
                       </h4>
                   </div>
                   <div class="col-sm-2">
-                      <a href="<?php echo e(route('user_create')); ?>" ><button class="btn btn-primary border-radius-05">Add User</button></a>
+                      <a href="<?php echo e(route('user_create')); ?>" ><button class="btn btn-primary border-radius-05">Add Supervisor </button></a>
                   </div>
                   <div class="col-sm-4">
                   <form name="user_search" id="user_search" class="search_filter_form" method="GET" accept-charset="UTF-8">

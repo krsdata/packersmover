@@ -44,7 +44,7 @@ input[type=number] {
                   <option value="0">Select Category</option>
                    @if(isset($Categorys))
                    @foreach($Categorys as $cat)
-                     <option value="{{$cat->id}}">{{$cat->name}}</option>
+                     <option value="{{$cat->id}}" @if(isset($category) && $category->parent_id==$cat->id) selected @endif >{{$cat->name}}</option>
                      @endforeach
                    @endif 
                   </select>

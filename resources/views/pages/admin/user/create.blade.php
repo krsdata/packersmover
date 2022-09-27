@@ -4,7 +4,7 @@
   <div class="col-12 grid-margin">
     <div class="card">
       <div class="card-body">
-        <h4 class="cust-card-title"><i class="mdi  mdi-account cust-box-icon"></i> @if(isset($user_data)) {{'Update User'}} @else {{'Add New User'}} @endif</h4>
+        <h4 class="cust-card-title"><i class="mdi  mdi-account cust-box-icon"></i> @if(isset($user_data)) {{'Update Supervisor'}} @else {{'Add New Supervisor'}} @endif</h4>
           <form  class="form-sample" method="POST" action = "{{ url('/admin/user/store') }}"  accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
                   {{ csrf_field() }}
           <input type="hidden" name="user_id" id="user_id" value="@if(isset($user_data)){{en_de_crypt($user_data->id,'e')}}@endif">

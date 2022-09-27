@@ -19,7 +19,7 @@
                       <i class="mdi mdi-arrow-top-right"></i>
                     </div>
                     <div class="text-white">
-                      <p class="font-weight-medium mt-md-2 mt-xl-0 text-md-center text-xl-left">Total Users</p>
+                      <p class="font-weight-medium mt-md-2 mt-xl-0 text-md-center text-xl-left">Total Supervisor </p>
                       <div class="d-flex flex-md-column flex-xl-row flex-wrap align-items-baseline align-items-md-center align-items-xl-baseline">
                         <h3 class="mb-0 mb-md-1 mb-lg-0 mr-1"><?php echo $total_customers;?></h3>
                         <!-- <small class="mb-0">This month</small> -->
@@ -37,7 +37,7 @@
                       <i class="mdi mdi-basket"></i>
                     </div>
                     <div class="text-white">
-                      <p class="font-weight-medium mt-md-2 mt-xl-0 text-md-center text-xl-left">Total Category</p>
+                      <p class="font-weight-medium mt-md-2 mt-xl-0 text-md-center text-xl-left">Total Register Customer </p>
                       <div class="d-flex flex-md-column flex-xl-row flex-wrap align-items-baseline align-items-md-center align-items-xl-baseline">
                         <h3 class="mb-0 mb-md-1 mb-lg-0 mr-1"><?php echo $total_category;?></h3>
                         <!-- <small class="mb-0">This month</small> -->
@@ -86,12 +86,13 @@
           </div>
     
 
-          <div class="row">
+          <div class="row" style="visibility:hidden">
             <div class="col-xl-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
                   <div class="d-flex justify-content-between align-items-md-end flex-wrap">
-                    <p class="card-title">All Today Registered Users</p>
+                    <p class="card-title">
+All Today Registered Users</p>
                     <!-- <div class="dropdown mb-3 mb-md-0">
                       <button class="btn btn-sm btn-outline-light dropdown-toggle text-dark" type="button" id="dropdownMenuDate1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         2018

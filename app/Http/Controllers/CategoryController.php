@@ -63,11 +63,11 @@ class CategoryController extends Controller
             $category->where('name','=',$category)->where('created_by',$user_id);
         }
 
-
-
+        $main_cat = Category::where('parent_id',0)->pluck('name','id');
+ 
 
         $s_count = $category->count();           
-        return view('pages/admin/category/index',compact('category','dates','s_count'))->with('no', ($request->input('page', 1) - 1) *  $perPage);
+        return view('pages/admin/category/index',compact('category','dates','s_count','main_cat'))->with('no', ($request->input('page', 1) - 1) *  $perPage);
         
          
     } 
@@ -81,23 +81,36 @@ class CategoryController extends Controller
     }
 
     public function category_store(Request $request) {
-        $user = Auth::user();   
+        $user = Auth::user();    
+        $cat_edit=0;
+        if($request->id){
+           $cat_edit=1;
+        }
+
         $validator_category_info = $this->validator_category_info_update($request->all());
-        if ($validator_category_info->fails()) {
+        if ($validator_category_info->fails() && $cat_edit==0) {
             return response()->json(['success' => FALSE, 'msg_type' => 'errors', 'errors' => $validator_category_info->getMessageBag()->toArray()]);
         }else{
-            $data=$request->all();           
+            $data=$request->all();      
+            
+            $duplicate_cat = Category::where('name',$request->name)->count();
+            if($duplicate_cat>1)
+            {
+                if ($validator_category_info->fails()) {
+                    return response()->json(['success' => FALSE, 'msg_type' => 'errors', 'errors' => $validator_category_info->getMessageBag()->toArray()]);
+                } 
+            }
 
             $data = $data;
-            if (!empty($_POST['id'])) {
+            if (!empty($request->id)) {
                 $id = en_de_crypt($_POST['id'], 'd');
                 $obj_data = Category::findorfail($id);
-                $obj_data->name = _sanitize_text_fields(@$data['name']);
+                $obj_data->name = trim(@$data['name']);
                 $obj_data->image = $data['image_val'];
-                $obj_data->parent_id = _sanitize_text_fields($data['parent_id']);
+                $obj_data->parent_id = trim($data['parent_id']);
                // $obj_data->active = $data['stock_status'];
                 if ($obj_data->update()) {
-                    return response()->json(['success' => TRUE,'op'=>'update','msg_type'=>'success','msg'=>'Category has been updated Sucessfully!','redirect_url'=>'/admin/category-list']);
+                    return response()->json(['success' => TRUE,'op'=>'create','msg_type'=>'success','msg'=>'Category has been updated Sucessfully!','redirect_url'=>'/admin/category-list']);
                 }else{
                     return response()->json(['success' => FALSE,'op'=>'update','msg_type'=>'error','msg'=>'Category Updation failed!','redirect_url'=>'/admin/category-list']);
                 }
@@ -129,14 +142,18 @@ class CategoryController extends Controller
     } 
 
     public function category_update($id){
-        //echo $id ; die();
+     
         $user = Auth::user();
         $id = en_de_crypt($id, 'd');
         $category = Category::findorfail($id);
-        return view('pages/admin/category/create',compact('category'));
+       
+        $Categorys = Category::where('parent_id','=','0')->orderBy('name', 'asc')->where('created_by',$user->id)->get();
+
+        return view('pages/admin/category/create',compact('category','Categorys'));
     } 
 
     public function img_upload(Request $request){
+ 
         $fileName = "false";
         if ($request->file('image')) {
             $file = $request->file('image');
@@ -155,21 +172,30 @@ class CategoryController extends Controller
         $name = $request['name'];
         $category = Category::where('name','LIKE','%'.$name.'%')->where('created_by',$user->id)->get();
         $total_row = $category->count();
+        $main_cat = Category::where('parent_id',0)->pluck('name','id');
         $output='';
             if($total_row > 0)
             {
                 foreach($category as $ckey => $cval)
-                {                    
-                    $id = $cval->id;
-                    $image = asset('public/images/category/'.$cval->image);
-                    $decid = en_de_crypt($cval->id,"e");
-                    $output.='<tr>'.
-                    '<td <button class="btn badge-primary btn-sm">'.$cval->id.'</td>'.
-                    '<td class="text-capitalize">'.$cval->name.'</td>'.
-                    '<td class="text-capitalize">'.'<img src="'.$image.'">'.'</td>'.
-                    '<td class="text-capitalize">'.$cval->created_at.'</td>'.                    
-                    '<td class="actions" data-th="">'.'<a href='.url('admin/category/edit/').'/'.$decid.'><button class="btn badge-primary btn-xs"><i class="mdi mdi-lead-pencil"></i></button></a>'.'</td>'.
-                    '</tr>';
+                {       
+                  
+                    $main_cat_name = $main_cat[$cval->parent_id]??$cval->name;
+                    
+                    if(isset($main_cat[$cval->parent_id]) || isset($main_cat_name))
+                    {
+                        $id = $cval->id;
+                        $image = asset('public/images/category/'.$cval->image);
+                        $decid = en_de_crypt($cval->id,"e");
+                        $output.='<tr>'.
+                        '<td <button class="btn badge-primary btn-sm">'.$cval->id.'</td>'.
+                        '<td class="text-capitalize">'.$main_cat_name .'</td>'.
+                        '<td class="text-capitalize">'.$cval->name.'</td>'.
+                        '<td class="text-capitalize">'.'<img src="'.$image.'">'.'</td>'.
+                        '<td class="text-capitalize">'.$cval->created_at.'</td>'.                    
+                        '<td class="actions" data-th="">'.'<a href='.url('admin/category/edit/').'/'.$decid.'><button class="btn badge-primary btn-xs"><i class="mdi mdi-lead-pencil"></i></button></a>'.'</td>'.
+                        '</tr>';
+                    }             
+                   
 
                 }
                 return response()->json(["success"=>"True","msg" => "","data"=>$output]);

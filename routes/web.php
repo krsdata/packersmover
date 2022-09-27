@@ -123,6 +123,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/admin/category-list', 'CategoryController@index')->name('category');
         Route::get('/admin/category-create', 'CategoryController@category_create')->name('category_create');
         Route::post('/admin/category/store', 'CategoryController@category_store')->name('category_store');
+        Route::get('/admin/category/store', 'CategoryController@category_store')->name('category_store');
         Route::get('/admin/category/edit/{id}', 'CategoryController@category_update')->name('category_update');
         Route::post('/category/img_upload', 'CategoryController@img_upload')->name('img_upload');
         Route::post('/admin/category/search_category_data', 'CategoryController@search_data_category')->name('search_data_category');

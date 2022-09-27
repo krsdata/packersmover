@@ -12,7 +12,8 @@
     <thead>
       <tr>
         <th>Id</th>
-        <th>Category Name</th>
+        <th>Category </th>
+        <th>Sub Category </th>
         <th>Image</th>
         <th>Created At</th>
         <th>Action</th>
@@ -21,8 +22,20 @@
     <tbody>
         @if(!$category->isEmpty())
             @foreach($category as $list)
+             @if(!isset($main_cat[$list->parent_id]))
+              <?php continue; ?>
+             @endif
+
+             <?php 
+              
+             // $main_cat_name = $main_cat[$list->parent_id]??$list->name;
+ 
+              
+              ?> 
             <tr id="{{en_de_crypt($list->id,'e')}}">
                 <td><button class="sid-name-text-st-sm btn badge-primary btn-sm openTankStockDetails">{{$list->id}}</button></td>
+                <td class="text-capitalize">{{$main_cat[$list->parent_id]??'NA'}}</td>
+
                 <td class="text-capitalize">{{$list->name}}</td>
                 <td class="text-capitalize"><img src="{{asset('images/category')}}/{{$list->image}}"></td>
                 <td class="text-capitalize">{{$list->created_at}}</td>

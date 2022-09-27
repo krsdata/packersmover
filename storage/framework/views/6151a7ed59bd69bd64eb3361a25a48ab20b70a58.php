@@ -12,7 +12,8 @@
     <thead>
       <tr>
         <th>Id</th>
-        <th>Category Name</th>
+        <th>Category </th>
+        <th>Sub Category </th>
         <th>Image</th>
         <th>Created At</th>
         <th>Action</th>
@@ -21,8 +22,20 @@
     <tbody>
         <?php if(!$category->isEmpty()): ?>
             <?php $__currentLoopData = $category; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $list): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+             <?php if(!isset($main_cat[$list->parent_id])): ?>
+              <?php continue; ?>
+             <?php endif; ?>
+
+             <?php 
+              
+             // $main_cat_name = $main_cat[$list->parent_id]??$list->name;
+ 
+              
+              ?> 
             <tr id="<?php echo e(en_de_crypt($list->id,'e')); ?>">
                 <td><button class="sid-name-text-st-sm btn badge-primary btn-sm openTankStockDetails"><?php echo e($list->id); ?></button></td>
+                <td class="text-capitalize"><?php echo e($main_cat[$list->parent_id]??'NA'); ?></td>
+
                 <td class="text-capitalize"><?php echo e($list->name); ?></td>
                 <td class="text-capitalize"><img src="<?php echo e(asset('images/category')); ?>/<?php echo e($list->image); ?>"></td>
                 <td class="text-capitalize"><?php echo e($list->created_at); ?></td>

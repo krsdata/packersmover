@@ -42,7 +42,7 @@ input[type=number] {
                   <option value="0">Select Category</option>
                    <?php if(isset($Categorys)): ?>
                    <?php $__currentLoopData = $Categorys; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                     <option value="<?php echo e($cat->id); ?>"><?php echo e($cat->name); ?></option>
+                     <option value="<?php echo e($cat->id); ?>" <?php if(isset($category) && $category->parent_id==$cat->id): ?> selected <?php endif; ?> ><?php echo e($cat->name); ?></option>
                      <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                    <?php endif; ?> 
                   </select>
