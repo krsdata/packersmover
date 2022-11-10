@@ -38,6 +38,12 @@
   <script src="https://cdn.ckeditor.com/4.14.0/standard-all/ckeditor.js"></script>
 
 
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+
+
+
+
 </head>
 <body class="sidebar-icon-only">
   <div class="container-scroller">
@@ -614,6 +620,16 @@
               timePicker:true,
               timePicker24Hour:true
           });
+
+          $('input[name="date"]').daterangepicker({
+            singleDatePicker: true,
+              locale: {
+                format: 'MMM DD, YYYY, HH:mm A'
+              },
+              timePicker:true,
+              timePicker12Hour:true
+          });
+
           $('input[name="singledate"]').daterangepicker({
             singleDatePicker: true,
             showDropdowns: true,
@@ -649,8 +665,13 @@ $('button[name="remove_levels"]').on('click', function(e){
 	}   
  	
    });
+
+
 });
 
+
       </script>
+      
+
 </body>
 </html><?php /**PATH /var/www/html/app/resources/views/layouts/dashboard.blade.php ENDPATH**/ ?>

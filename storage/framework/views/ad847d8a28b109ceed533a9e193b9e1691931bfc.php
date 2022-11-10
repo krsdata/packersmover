@@ -3,7 +3,7 @@
   <div class="col-12 grid-margin">
     <div class="card">
       <div class="card-body">
-        <h4 class="cust-card-title"><i class="mdi  mdi-account cust-box-icon"></i> <?php if(isset($user_data)): ?> <?php echo e('Update User'); ?> <?php else: ?> <?php echo e('Add New User'); ?> <?php endif; ?></h4>
+        <h4 class="cust-card-title"><i class="mdi  mdi-account cust-box-icon"></i> <?php if(isset($user_data)): ?> <?php echo e('Update Supervisor'); ?> <?php else: ?> <?php echo e('Add New Supervisor'); ?> <?php endif; ?></h4>
           <form  class="form-sample" method="POST" action = "<?php echo e(url('/admin/user/store')); ?>"  accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
                   <?php echo e(csrf_field()); ?>
 

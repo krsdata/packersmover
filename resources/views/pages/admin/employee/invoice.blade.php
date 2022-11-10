@@ -11,7 +11,8 @@
 </head>
 <body>
         <!-- style="margin: 0px auto;width: 55%;background-color: #fff;" -->
-    <a href="{{ url ('/admin/order-list') }}">Home</a>
+    
+
     <div class="container bootstrap snippets bootdeys" style="background-color: #fff;width:60%;" >
         <div class="row">
                 <div class="col-sm-12">
@@ -149,30 +150,30 @@
                                                 <td></td>
                                                 <td class="text-right">&#8377 <?php echo $order->sub_total - $order->discount;?></td>
                                             </tr>
-                                            
+<!--                                             
                                             <tr colspan="3">
                                                 <td >GST</td>
                                                 <td class="text-right" colspan="3">CGST - <?php echo $order->gst / 2;?>%</td>
                                                 <td class="text-right" colspan="5">&#8377 <?php echo $order->gst_amt / 2;?></td>
                                                 
-                                            </tr>
-                                            <tr rowspan="3">
+                                            </tr> -->
+                                            <!-- <tr rowspan="3">
                                             <td></td>
                                             <td class="text-right" colspan="3">SGST - <?php echo $order->gst / 2;?>%</td>
                                             <td class="text-right" colspan="5">&#8377 <?php echo $order->gst_amt / 2;?></td>
-                                            </tr>
+                                            </tr> -->
 
-                                            <tr rowspan="3">
+                                            <!-- <tr rowspan="3">
                                                 <td >Transport GST</td>
                                                 <td class="text-right" colspan="3">CGST - <?php echo $order->transport_gst / 2;?>%</td>
                                                 <td class="text-right" colspan="5">&#8377 <?php echo $order->transport_gst_amt / 2;?></td>
-                                            </tr>
+                                            </tr> -->
 
-                                            <tr rowspan="3">
+                                            <!-- <tr rowspan="3">
                                             <td></td>
                                             <td class="text-right" colspan="3">SGST - <?php echo $order->transport_gst / 2;?>%</td>
                                             <td class="text-right" colspan="5">&#8377 <?php echo $order->transport_gst_amt / 2;?></td>
-                                            </tr>
+                                            </tr> -->
 
                                             <tr>
                                                 <td colspan="5">Grand Total</td>
@@ -228,8 +229,10 @@
 
                         </div>
 
-                        <div style="margin-bottom:200px;">
-
+                        <div style="margin:50px 0 50px 35%;">
+                        <a href="{{ url ('/admin/order-list') }}"> <button>Home</button></a>
+                       
+                             <button onclick="window.print()">Print</button>
                         </div>
 
                     </div>

@@ -17,7 +17,8 @@
         "laravel/ui": "^2.0",
         "maatwebsite/excel": "^3.1",
         "mikehaertl/phpwkhtmltopdf": "^2.4",
-        "twilio/sdk": "^6.18"
+        "twilio/sdk": "^6.18",
+        "barryvdh/laravel-dompdf": "^0.8.6"
     },
     "require-dev": {
         "facade/ignition": "^1.4",

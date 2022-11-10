@@ -189,11 +189,11 @@ class OrderController extends Controller
                 
               
                     $order_obj->origin = $data['origin'];
-                    $order_obj->origin_lift_availability = $data['origin_lift_availability'];
-                    $order_obj->origin_floor = $data['origin_floor'];
-                    $order_obj->destination = $data['destination'];
-                    $order_obj->destination_lift_availability = $data['destination_lift_availability'];
-                    $order_obj->destination_floor = $data['destination_floor'];
+                    $order_obj->origin_lift_availability = $data['origin_lift_availability']??null;
+                    $order_obj->origin_floor = $data['origin_floor']??0;
+                    $order_obj->destination = $data['destination']??null;
+                    $order_obj->destination_lift_availability = $data['destination_lift_availability']??null;
+                    $order_obj->destination_floor = $data['destination_floor']??null;
                 
                 
                 $order_obj->date = $data['date'];
@@ -381,6 +381,7 @@ class OrderController extends Controller
         // retrive all records from db
         $data = array();
         $id = en_de_crypt($id, 'd');
+       
        // $perPage = 10;
         $order = Order_master::findorfail($id);
         //$order = $order->paginate($perPage);
@@ -391,10 +392,10 @@ class OrderController extends Controller
         
        
       
-        return view('pages/admin/employee/invoice',compact('order','items','total_count'));
-        //$pdf = PDF::loadView('pages.admin.employee.invoice', compact('order','items'));
-        //
-        //return $pdf->download('pdf_file.pdf');
+       return view('pages/admin/employee/invoice',compact('order','items','total_count'));
+       // $pdf = PDF::loadView('pages.admin.employee.invoice', compact('order','items','total_count'));
+        
+      //  return $pdf->download('pdf_file.pdf');
     }
 
 

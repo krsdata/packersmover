@@ -1,7 +1,7 @@
 <?php $__env->startSection('dashcontent'); ?>
 
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+
 
 <div class="row quotation_page">
   <div class="col-12 grid-margin">
@@ -117,8 +117,9 @@
                                   <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="col-form-label" for="f1-first-name">Move Date</label>
-                                        <input type="date" name="date" id="date" placeholder="Select Date..." class="f1-first-name form-control" >
-                                    </div>
+
+                                        <input type="text" placeholder="Select Date..." class="form-control form_datetime_start form_datetime" id="date" value="" readonly="" name="date">
+                                      </div>
                                   </div>
 
                               </div>
@@ -150,12 +151,12 @@
                                     <!-- End main category div -->
 
                                     <!-- Sub category -->
-                                    <div class="tab-content">
+                                    <div class="tab-content" style="width: 100%; float: left;margin-bottom:10px">
                                         <?php $__currentLoopData = $category; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $clist): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                          <div class="tab-pane <?php echo e($clist->id == 1 ? 'active' : ''); ?>" id="tabs-<?php echo e($clist->id); ?>" role="tabpanel">
+                                          <div class="tab-pane <?php echo e($clist->id == 1 ? 'active' : ''); ?> col-md-12" id="tabs-<?php echo e($clist->id); ?>" role="tabpanel">
                                         
                                                 <?php $__currentLoopData = $clist->sub_cat; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $ckey): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                  <div class="row">
+                                                  <div class="col-md-4" style="float: left;">
                                                     <div class="col-sm-12">
                                                       <div class="card overflow-hidden">
                                                         <div class="card-content">
@@ -335,17 +336,18 @@
                                                           </div>
                                                           </div>
                                                       </div>
-
-                                                      <div class="col-md-4">
+                                                      <input type="hidden" name="car_transport" id="car_transport" class="form-control"
+                                                              data-msg-required="car_transport is required" value="0" />
+                                                      <!-- <div class="col-md-4" style="visibility: hidden">
                                                           <div class="form-group row">
                                                           <label class="col-sm-4 col-form-label">Car Transport</label>
                                                               <div class="col-sm-6">
                                                               <input type="number" name="car_transport" id="car_transport" class="form-control"
-                                                              data-msg-required="car_transport is required" value="" />
+                                                              data-msg-required="car_transport is required" value="0" />
                                                               
                                                           </div>
                                                           </div>
-                                                      </div>
+                                                      </div> -->
 
                                                       <div class="col-md-4">
                                                           <div class="form-group row">
@@ -357,34 +359,6 @@
                                                           </div>
                                                           </div>
                                                       </div>
-
-                                                  </div>
-                                                  <!-- end div -->
-
-                                                  <!-- fourth div -->
-                                                  <div class="row">
-                                                      <div class="col-md-4">
-                                                          <div class="form-group row">
-                                                          <label class="col-sm-4 col-form-label">GST</label>
-                                                              <div class="col-sm-6">
-                                                              <input type="number" name="gst" id="gst" class="form-control"
-                                                              data-msg-required="gst is required" value="" required/>
-                                                              <label id="gst-error-server" class="server-error" for="gst"></label>
-                                                          </div>
-                                                          </div>
-                                                      </div>
-
-                                                      <div class="col-md-4">
-                                                              <div class="form-group row">
-                                                              <label class="col-sm-4 col-form-label">Transport Gst</label>
-                                                                  <div class="col-sm-6">
-                                                                  <input type="number" name="transport_gst" id="transport_gst" class="form-control"
-                                                                  data-msg-required="transport_gst is required" value=""/>
-                                                                 
-                                                              </div>
-                                                              </div>
-                                                          </div>
-
                                                       <div class="col-md-4">
                                                           <div class="form-group row">
                                                           <label class="col-sm-4 col-form-label">Sub Total</label>
@@ -395,6 +369,39 @@
                                                           </div>
                                                           </div>
                                                       </div>
+
+                                                  </div>
+                                                  <!-- end div -->
+
+                                                  <!-- fourth div -->
+                                                  <div class="row">
+                                                    
+                                                  <input type="hidden" name="gst" id="gst" class="form-control"
+                                                              data-msg-required="gst is required" value="0" required/>
+                                                      <!-- <div class="col-md-4" style="visibility: hidden">
+                                                          <div class="form-group row">
+                                                          <label class="col-sm-4 col-form-label">GST</label>
+                                                              <div class="col-sm-6">
+                                                              <input type="number" name="gst" id="gst" class="form-control"
+                                                              data-msg-required="gst is required" value="0" required/>
+                                                              <label id="gst-error-server" class="server-error" for="gst"></label>
+                                                          </div>
+                                                          </div>
+                                                      </div>
+
+                                                      <div class="col-md-4" style="visibility: hidden">
+                                                              <div class="form-group row">
+                                                              <label class="col-sm-4 col-form-label">Transport Gst</label>
+                                                                  <div class="col-sm-6">
+                                                                  <input type="number" name="transport_gst" id="transport_gst" class="form-control"
+                                                                  data-msg-required="transport_gst is required" value="0"/>
+                                                                 
+                                                              </div>
+                                                              </div>
+                                                          </div> -->
+        <input type="hidden" name="transport_gst" id="transport_gst" class="form-control" 
+                                                                  data-msg-required="transport_gst is required" value="0"/>
+                                                     
                                                       
 
                                                   </div>
